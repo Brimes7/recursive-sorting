@@ -28,6 +28,7 @@ def merge(arrA, arrB):
     # THESE WHILE LOOPS WILL STORE THE REMAINING ELEMENTS
     while x < len(arrA):
         merged_arr[z] = arrA[x]
+        #same as z += 1
         z = z + 1
         x = x + 1
     while y < len(arrB):
