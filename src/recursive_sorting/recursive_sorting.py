@@ -44,6 +44,36 @@ def merge(arrA, arrB):
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort(arr):
     # Your code here
+    if len(arr) > 1:
+        #This will find the middle
+        middle = len(arr)//2
+        #Dividing the array elements
+        left = arr[:middle]
+        #Splits into 2 halves
+        right = arr[middle:]
+
+        merge_sort(left)
+        merge_sort(right)
+
+        x = y = z = 0
+        #This will copy data over int the temoprary array
+        while x < len(left) and y < len(right):
+            if left[x] < right[y]:
+                arr[z] = left[x]
+                x += 1
+            else:
+                arr[z] = right[y]
+                y += 1
+            z += 1
+        #Checks all the remainder
+        while x < len(left):
+            arr[z] = left[x]
+            x += 1
+            z += 1
+        while y < len(right):
+            arr[z] = right[y]
+            y += 1
+            z += 1
 
     return arr
 
